@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --color-pink-primary: #f48fb1;
+  --color-pink-light: #fce4ec;
+  --color-pink-bg: #fff5f8;
+  --color-pink-accent: #ec407a;
+  --color-pink-soft: #f8bbd0;
+  --color-pink-deep: #e91e63;
+  --color-pink-glow: #ffeef8;
+  --color-text: #3d3d3d;
+  --color-text-light: #999999;
+  --color-border: #f3e0e8;
+  --color-white: #ffffff;
+  --font-heading: 'Nunito', sans-serif;
+  --font-logo: 'Cormorant Garamond', serif;
+  --font-body: 'Quicksand', sans-serif;
+  --font-serif: 'Nunito', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(180deg, var(--color-pink-glow) 0%, #ffffff 40%);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+
+/* Pink gradient utilities */
+.gradient-pink {
+  background: linear-gradient(135deg, #f8bbd0, #f48fb1, #ec407a);
+}
+.gradient-pink-soft {
+  background: linear-gradient(135deg, #ffeef8, #fce4ec, #f8bbd0);
+}
+.gradient-pink-text {
+  background: linear-gradient(135deg, #ec407a, #f48fb1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 0.15em;
+  display: inline-block;
+}
+.gradient-pink-btn {
+  background: linear-gradient(135deg, #f48fb1, #ec407a);
+  color: white;
+  transition: all 0.3s ease;
+}
+.gradient-pink-btn:hover {
+  background: linear-gradient(135deg, #ec407a, #e91e63);
+  box-shadow: 0 4px 15px rgba(236, 64, 122, 0.35);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #fce4ec; }
+::-webkit-scrollbar-thumb { background: #f48fb1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #ec407a; }
+
+/* Markdown/prose styles */
+.prose-blog h1, .prose-blog h2, .prose-blog h3, .prose-blog h4 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+.prose-blog h1 { font-size: 1.8rem; font-weight: 700; }
+.prose-blog h2 { font-size: 1.5rem; font-weight: 600; }
+.prose-blog h3 { font-size: 1.25rem; font-weight: 600; }
+.prose-blog p {
+  line-height: 1.9;
+  margin-bottom: 1.2em;
+  color: #555;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+}
+.prose-blog a { color: var(--color-pink-accent); text-decoration: underline; }
+.prose-blog a:hover { color: var(--color-pink-deep); }
+.prose-blog img { margin: 1.5em 0; max-width: 100%; }
+.prose-blog blockquote {
+  border-left: 3px solid var(--color-pink-primary);
+  padding-left: 1.2em;
+  margin: 1.5em 0;
+  color: var(--color-text-light);
+  font-style: italic;
+  font-family: var(--font-serif);
+}
+.prose-blog ul, .prose-blog ol { padding-left: 1.5em; margin-bottom: 1em; }
+.prose-blog li { margin-bottom: 0.4em; line-height: 1.7; font-family: var(--font-serif); }
+.prose-blog code {
+  background: #f5f5f5;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+.prose-blog pre {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 1em;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+.prose-blog pre code { background: transparent; padding: 0; color: inherit; }
+.prose-blog strong { font-weight: 600; }
+.prose-blog em { font-style: italic; }
+
+/* Section widget title */
+.widget-title {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, #f48fb1, #fce4ec) 1;
+  margin-bottom: 1.25rem;
+}
+
+/* Section separator */
+.section-divider {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-pink-primary), transparent);
+  margin: 2rem 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.page-transition {
+  animation: fadeIn 0.3s ease-out;
+}
