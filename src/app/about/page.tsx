@@ -12,9 +12,11 @@ export default function AboutPage() {
       <div className="text-center mb-10">
         {/* Profile image placeholder */}
         <div className="w-36 h-36 mx-auto mb-6 bg-pink-light overflow-hidden rounded-full border-2 border-pink-primary">
-          <div className="w-full h-full flex items-center justify-center">
-            <span className="text-4xl">&#10047;</span>
-          </div>
+          <img
+            src="/images/toni-about.png"
+            alt={AUTHOR_NAME}
+            className="w-full h-full object-cover"
+          />
         </div>
 
         <h1
